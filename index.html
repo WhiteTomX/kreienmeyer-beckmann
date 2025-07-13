@@ -99,32 +99,37 @@
     <div class="container">
         <h1>Hochzeit Kreienmeyer-Beckmann</h1>
         <div class="explanation" id="explanation">
-            <!-- Erklärung wird per JavaScript gesetzt -->
+            Hier kannst du deine Fotos von der Hochzeit hochladen. KLicke einfach unten auf den Knopf und du wirst
+            weitergeleitet. Später findest du hier auch die Möglichkeit zum herunterladen.
         </div>
-        <a class="link-btn" href="https://download.kreienmeyer-beckmann.de" target="_blank">Fotos ansehen &
-            herunterladen</a>
         <a class="link-btn" href="https://upload.kreienmeyer-beckmann.de" target="_blank">Fotos hochladen</a>
+
+        <a class="link-btn" id="download-btn" href="#" tabindex="-1" aria-disabled="true"
+            title="Download noch nicht verfügbar" style="pointer-events: none; opacity: 0.5; cursor: not-allowed;">Fotos
+            ansehen & herunterladen (bald verfügbar)</a>
     </div>
     <script>
         function setExplanation() {
+            // --- Download-Anleitung für spätere Aktivierung ---
+            /*
             const isSmallScreen = window.innerWidth <= 1024;
             let downloadText = '';
             if (isSmallScreen) {
                 downloadText = `<li><em>Foto anzeigen:</em> Einfach ein Foto anklicken</li>
                 <li><em>Diashow starten:</em> Nach dem Anklicken eines Fotos auf den Play-Button oben rechts klicken</li>
                 <li><em>Alle Fotos herunterladen</em>: Klicke auf die drei Punkte oben rechts. Anschließend auf "Alle Dateien Herunterladen"</li>
-                <li><em>Mehrere Fotos herunterladen</em>: Wähle die Fotos aus, indem du das Kontrollkästchen vor den Dateinamen anklickst. Um die ausgewählten Fotos herunterzuladen, klicke auf die drei Punkte ("Aktionen") über der Fotoliste und wähle herunterladen..</li>
-`;
+                <li><em>Mehrere Fotos herunterladen</em>: Wähle die Fotos aus, indem du das Kontrollkästchen vor den Dateinamen anklickst. Um die ausgewählten Fotos herunterzuladen, klicke auf die drei Punkte ("Aktionen") über der Fotoliste und wähle herunterladen..</li>`;
             } else {
                 downloadText = `<li><em>Foto anzeigen:</em> Einfach ein Foto anklicken</li>
                 <li><em>Diashow starten:</em> Nach dem Anklicken eines Fotos auf den Play-Button oben rechts klicken</li>
                 <li><em>Alle Fotos herunterladen</em>: KLicke auf den BUtton oben rechts</li>
-                <li><em>Mehrere Fotos herunterladen</em>: Wähle die Fotos aus, indem du das Kontrollkästchen vor den Dateinamen anklickst. Um die ausgewählten Fotos herunterzuladen, klicke auf die drei Punkte ("Aktionen") über der Fotoliste und wähle herunterladen.</li>
-`;
+                <li><em>Mehrere Fotos herunterladen</em>: Wähle die Fotos aus, indem du das Kontrollkästchen vor den Dateinamen anklickst. Um die ausgewählten Fotos herunterzuladen, klicke auf die drei Punkte ("Aktionen") über der Fotoliste und wähle herunterladen.</li>`;
             }
             document.getElementById('explanation').innerHTML = `
-        Nach einem klick auf den jeweiligen Button, wirst du auf die eigentliche Website weitergeleitet. Die folgende Anleitung bezieht sich auf die dort angezeigte Seite.<br><br>
-        <ul>${downloadText}</ul>`;
+                Nach einem klick auf den jeweiligen Button, wirst du auf die eigentliche Website weitergeleitet. Die folgende Anleitung bezieht sich auf die dort angezeigte Seite.<br><br>
+                <ul>${downloadText}</ul>`;
+            document.getElementById('explanation').style.display = '';
+            */
         }
         setExplanation();
         window.addEventListener('resize', setExplanation);
