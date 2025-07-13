@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreienmeyer Beckmann Hochzeit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            margin-top: 5vh;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2d3a4a;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-btn {
+            display: block;
+            width: 100%;
+            margin: 1rem 0;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            background: #4a90e2;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .link-btn:hover {
+            background: #357ab8;
+        }
+
+        .explanation {
+            margin-bottom: 2rem;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .explanation ul {
+            text-align: left;
+            margin: 1em auto 0 auto;
+            padding-left: 1.2em;
+            max-width: 360px;
+        }
+
+        .explanation li {
+            margin-bottom: 0.7em;
+            line-height: 1.5;
+            padding-left: 0.2em;
+        }
+
+        .explanation li em {
+            font-style: normal;
+            font-weight: bold;
+            color: #2d3a4a;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin-top: 2vh;
+                padding: 1.2rem 0.5rem;
+                max-width: 98vw;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .link-btn {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hochzeit Kreienmeyer-Beckmann</h1>
+        <div class="explanation" id="explanation">
+            <!-- Erklärung wird per JavaScript gesetzt -->
+        </div>
+        <a class="link-btn" href="https://download.kreienmeyer-beckmann.de" target="_blank">Fotos ansehen &
+            herunterladen</a>
+        <a class="link-btn" href="https://upload.kreienmeyer-beckmann.de" target="_blank">Fotos hochladen</a>
+    </div>
+    <script>
+        function setExplanation() {
+            const isSmallScreen = window.innerWidth <= 1024;
+            let downloadText = '';
+            if (isSmallScreen) {
+                downloadText = `<li><em>Foto anzeigen:</em> Einfach ein Foto anklicken</li>
+                <li><em>Diashow starten:</em> Nach dem Anklicken eines Fotos auf den Play-Button oben rechts klicken</li>
+                <li><em>Alle Fotos herunterladen</em>: Klicke auf die drei Punkte oben rechts. Anschließend auf "Alle Dateien Herunterladen"</li>
+                <li><em>Mehrere Fotos herunterladen</em>: Wähle die Fotos aus, indem du das Kontrollkästchen vor den Dateinamen anklickst. Um die ausgewählten Fotos herunterzuladen, klicke auf die drei Punkte ("Aktionen") über der Fotoliste und wähle herunterladen..</li>
+`;
+            } else {
+                downloadText = `<li><em>Foto anzeigen:</em> Einfach ein Foto anklicken</li>
+                <li><em>Diashow starten:</em> Nach dem Anklicken eines Fotos auf den Play-Button oben rechts klicken</li>
+                <li><em>Alle Fotos herunterladen</em>: KLicke auf den BUtton oben rechts</li>
+                <li><em>Mehrere Fotos herunterladen</em>: Wähle die Fotos aus, indem du das Kontrollkästchen vor den Dateinamen anklickst. Um die ausgewählten Fotos herunterzuladen, klicke auf die drei Punkte ("Aktionen") über der Fotoliste und wähle herunterladen.</li>
+`;
+            }
+            document.getElementById('explanation').innerHTML = `
+        Nach einem klick auf den jeweiligen Button, wirst du auf die eigentliche Website weitergeleitet. Die folgende Anleitung bezieht sich auf die dort angezeigte Seite.<br><br>
+        <ul>${downloadText}</ul>`;
+        }
+        setExplanation();
+        window.addEventListener('resize', setExplanation);
+    </script>
+</body>
+
+</html>
